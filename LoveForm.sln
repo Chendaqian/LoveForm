@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoveFormsApp", "LoveForm\LoveFormsApp.csproj", "{2FA35B2A-EB9F-4BC8-BEF3-8600AD50E562}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FA35B2A-EB9F-4BC8-BEF3-8600AD50E562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA35B2A-EB9F-4BC8-BEF3-8600AD50E562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA35B2A-EB9F-4BC8-BEF3-8600AD50E562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA35B2A-EB9F-4BC8-BEF3-8600AD50E562}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C848512-7858-4330-A4B9-7894282E0A32}
+	EndGlobalSection
+EndGlobal
