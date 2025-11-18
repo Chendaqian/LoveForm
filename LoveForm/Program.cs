@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace LoveFormsApp
 {
@@ -30,6 +31,7 @@ namespace LoveFormsApp
     public class MainForm : Form
     {
         private readonly List<Form> _childForms = new List<Form>();
+        private readonly int _maxChildForms; // 最大子窗口数量（从配置读取）
 
         #region 数据源
         private static readonly string[] strarr =
@@ -97,6 +99,14 @@ namespace LoveFormsApp
         {
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+
+            const int defaultMax = 80; // 默认最大子窗口数量
+            string configValue = ConfigurationManager.AppSettings["MaxChildForms"]; // 从App.config读取
+            if (!int.TryParse(configValue, out int parsedValue))
+            {
+                parsedValue = defaultMax; // 解析失败使用默认值
+            }
+            _maxChildForms = parsedValue; // 保存最大子窗口数量
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -109,7 +119,7 @@ namespace LoveFormsApp
         {
             for (int i = 0; i < strarr.Length; i++)
             {
-                if (_childForms.Count >= 30)
+                if (_childForms.Count >= _maxChildForms) // 达到最大窗口数量则退出
                 {
                     Application.Exit();
                     return;
