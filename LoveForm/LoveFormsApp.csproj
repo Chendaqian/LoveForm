@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LoveForm</RootNamespace>
+    <RootNamespace>LoveFormsApp</RootNamespace>
     <AssemblyName>LoveForm</AssemblyName>
     <StartupObject>LoveFormsApp.Program</StartupObject>
     <ApplicationIcon>Resources\app.ico</ApplicationIcon>

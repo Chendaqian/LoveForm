@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LoveFormsApp.Properties;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 
 namespace LoveFormsApp
 {
@@ -98,9 +99,12 @@ namespace LoveFormsApp
         public MainForm()
         {
             this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
+            this.ShowInTaskbar = true;
+            this.Size = new Size(1, 1);
 
-            const int defaultMax = 80; // 默认最大子窗口数量
+            this.Icon = Resources.app;
+
+            const int defaultMax = 1000; // 默认最大子窗口数量
             string configValue = ConfigurationManager.AppSettings["MaxChildForms"]; // 从App.config读取
             if (!int.TryParse(configValue, out int parsedValue))
             {
@@ -147,7 +151,41 @@ namespace LoveFormsApp
             Color.FromArgb(255, 192, 203), // 亮粉色
             Color.FromArgb(221, 160, 221), // 亮紫色 (紫丁香色)
             Color.FromArgb(175, 238, 238), // 亮青色 (苍白绿松石色)
-            Color.FromArgb(250, 128, 114)  // 亮红色 (鲑鱼色)
+            Color.FromArgb(250, 128, 114),  // 亮红色 (鲑鱼色)
+            Color.FromArgb(255, 165, 0),
+            Color.FromArgb(135, 206, 235),
+            Color.FromArgb(152, 251, 152),
+            Color.FromArgb(238, 130, 238),
+            Color.FromArgb(255, 105, 180),
+            Color.FromArgb(173, 255, 47),
+            Color.FromArgb(0, 191, 255),
+            Color.FromArgb(255, 160, 122),
+            Color.FromArgb(255, 250, 205),
+            Color.FromArgb(135, 206, 250),
+            Color.FromArgb(240, 128, 128),
+            Color.FromArgb(216, 191, 216),
+            Color.FromArgb(64, 224, 208),
+            Color.FromArgb(255, 228, 181),
+            Color.FromArgb(176, 224, 230),
+            Color.FromArgb(255, 182, 193),
+            Color.FromArgb(230, 230, 250),
+            Color.FromArgb(255, 228, 196),
+            Color.FromArgb(255, 222, 173),
+            Color.FromArgb(250, 235, 215),
+            Color.FromArgb(255, 239, 213),
+            Color.FromArgb(255, 240, 245),
+            Color.FromArgb(255, 245, 238),
+            Color.FromArgb(255, 250, 240),
+            Color.FromArgb(245, 245, 220),
+            Color.FromArgb(245, 255, 250),
+            Color.FromArgb(240, 255, 255),
+            Color.FromArgb(224, 255, 255),
+            Color.FromArgb(240, 255, 240),
+            Color.FromArgb(224, 255, 224),
+            Color.FromArgb(255, 248, 220),
+            Color.FromArgb(216, 230, 180),
+            Color.FromArgb(200, 230, 255),
+            Color.FromArgb(255, 210, 210)
         };
 
         public ColorForm(string text, int index)
