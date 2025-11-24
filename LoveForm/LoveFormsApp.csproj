@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FodyWeavers.xsd" />
     <None Include="Resources\app.ico" />
   </ItemGroup>
 
