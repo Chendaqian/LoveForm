@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,6 +34,7 @@ namespace LoveFormsApp
         private readonly int _maxChildForms; // 最大子窗口数量（从配置读取）
 
         #region 数据源
+
         private static readonly string[] strarr =
         {
             "继续前进", "你是最可爱的", "保持热情", "相信奇迹",
@@ -94,7 +94,8 @@ namespace LoveFormsApp
             "岁月静好", "现世安稳", "愿你快乐", "每一天都充满欢笑", "不忘初心", "砥砺前行", "心中有梦", "脚下有路",
             "温暖如春", "愿你被世界温柔以待"
         };
-        #endregion
+
+        #endregion 数据源
 
         public MainForm()
         {
@@ -142,6 +143,7 @@ namespace LoveFormsApp
     public partial class ColorForm : Form
     {
         private static readonly Random _rand = new Random();
+
         // 更新后的颜色列表，颜色更深一些
         private static readonly List<Color> _freshColors = new List<Color>
         {
