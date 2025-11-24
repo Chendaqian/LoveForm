@@ -13,11 +13,14 @@ jobs:
   build-and-release:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: microsoft/setup-msbuild@v1
+        with:
+          dotnet-version: '8.0.x'
       - name: build
         shell: pwsh
-        run: msbuild LoveForm\LoveFormsApp.csproj /t:Restore,Build /p:Configuration=Release /p:GenerateResourceUsePreserializedResources=true
+        run: |
+          dotnet restore LoveForm\LoveFormsApp.csproj
+          dotnet build LoveForm\LoveFormsApp.csproj -c Release -p:GenerateResourceUsePreserializedResources=true
       - name: package
         shell: pwsh
         run: |
