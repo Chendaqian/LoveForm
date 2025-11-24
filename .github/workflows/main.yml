@@ -22,7 +22,7 @@ jobs:
         shell: pwsh
         run: |
           dotnet restore LoveForm\LoveFormsApp.csproj
-          dotnet build LoveForm\LoveFormsApp.csproj -c Release -p:GenerateResourceUsePreserializedResources=true
+          dotnet build LoveForm\LoveFormsApp.csproj -c Release
       - name: package
         shell: pwsh
         run: |
