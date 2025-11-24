@@ -17,12 +17,12 @@ jobs:
       - uses: microsoft/setup-msbuild@v1
       - name: build
         shell: pwsh
-        run: msbuild LoveFormsApp.csproj /t:Restore,Build /p:Configuration=Release /p:GenerateResourceUsePreserializedResources=true
+        run: msbuild LoveForm\LoveFormsApp.csproj /t:Restore,Build /p:Configuration=Release /p:GenerateResourceUsePreserializedResources=true
       - name: package
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist
-          Compress-Archive -Path bin\Release\* -DestinationPath dist\LoveFormsApp-${{ github.ref_name }}.zip -Force
+          Compress-Archive -Path LoveForm\bin\Release\* -DestinationPath dist\LoveFormsApp-${{ github.ref_name }}.zip -Force
       - name: publish
         uses: softprops/action-gh-release@v2
         with:
