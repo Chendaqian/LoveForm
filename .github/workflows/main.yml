@@ -23,6 +23,14 @@ jobs:
         run: |
           dotnet restore LoveForm\LoveFormsApp.csproj
           dotnet build LoveForm\LoveFormsApp.csproj -c Release -p:GenerateResourceUsePreserializedResources=true
+      - name: verify output
+        shell: pwsh
+        run: |
+          if (!(Test-Path "LoveForm\bin\Release\net48\LoveForm.exe")) { Write-Error "Build output not found: LoveForm.exe" }
+      - name: list output
+        shell: pwsh
+        run: |
+          Get-ChildItem -Recurse -Force LoveForm\bin\Release | Select-Object FullName,Length | Format-Table -AutoSize
       - name: package
         shell: pwsh
         run: |
@@ -31,4 +39,5 @@ jobs:
       - name: publish
         uses: softprops/action-gh-release@v2
         with:
-          files: dist\LoveFormsApp-${{ github.ref_name }}.zip
+          files: dist/LoveFormsApp-${{ github.ref_name }}.zip
+          fail_if_no_files: true
