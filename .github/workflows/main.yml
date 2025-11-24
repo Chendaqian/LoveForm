@@ -22,12 +22,12 @@ jobs:
         shell: pwsh
         run: |
           dotnet restore LoveForm\LoveFormsApp.csproj
-          dotnet build LoveForm\LoveFormsApp.csproj -c Release -p:GenerateResourceUsePreserializedResources=false
+          dotnet build LoveForm\LoveFormsApp.csproj -c Release -p:GenerateResourceUsePreserializedResources=true
       - name: package
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path dist
-          Compress-Archive -Path LoveForm\bin\Release\* -DestinationPath dist\LoveFormsApp-${{ github.ref_name }}.zip -Force
+          Compress-Archive -Path LoveForm\bin\Release\net48\* -DestinationPath dist\LoveFormsApp-${{ github.ref_name }}.zip -Force
       - name: publish
         uses: softprops/action-gh-release@v2
         with:
