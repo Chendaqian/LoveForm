@@ -2,6 +2,10 @@
 
 <img width="3840" height="2080" alt="image" src="https://github.com/user-attachments/assets/2a315c49-507e-4ada-9b47-2ba75b973a6a" />
 
+see https://deepwiki.com/Chendaqian/LoveForm
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Chendaqian/LoveForm)
+
 - 一个 Windows 平台的`夸夸程序`，目标框架 `net48`，语言版本 `C# 7.3`
 - 支持发布为“单片 exe”（通过 `Costura.Fody` 将托管依赖嵌入可执行文件）
 - GitHub Actions 基于标签自动构建、打包并发布 Release
